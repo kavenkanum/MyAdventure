@@ -119,15 +119,17 @@ namespace Engine
 
         private static void PopulateQuests()
         {
+            var itemReward = ItemByID(ITEM_ID_HEALING_POTION);
+            
             Quest clearSewers =
                 new Quest(
                     QUEST_ID_CLEAR_SEWERS,
                     "Clear the Sewers.",
-                    "Kill rats in the Sewers and bring back 3 rat tails. You will receive a healing potion and 10 gold pieces.", 20, 10);
+                    "Kill rats in the Sewers and bring back 3 rat tails. You will receive a healing potion and 10 gold pieces.", 20, 10, itemReward);
 
             clearSewers.QuestCompletionItems.Add(new QuestCompletionItem(ItemByID(ITEM_ID_RAT_TAIL), 3));
 
-            clearSewers.ItemReward = ItemByID(ITEM_ID_HEALING_POTION);
+           
 
             Quest clearClayCanyon = new Quest(QUEST_ID_CLEAR_CLAY_CANYON,
                     "Clear the Clay Canyon.",
